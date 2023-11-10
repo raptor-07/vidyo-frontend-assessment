@@ -14,11 +14,11 @@ Visit the deployed application: [Video Player - Vercel](https://vidyo-frontend-a
 
 ## Known Issues
 
-- **[Issue 1: Browser Compatibility for `MediaElement.audioTracks` Property](#)**
+- **[Issue 1: Browser Compatibility for `MediaElement.audioTracks` Property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks)**
   - Browser compatibility for the `audioTracks` property, which implements judgment of the presence of an audio track in the video.
 - **[Issue 2: blobURLs Usage and Streaming Differences](#)**
   - BlobURLs are used to reference the memory in the stack that stores the pixel data. Some browsers may stream this faster. The entire build is running fastest on Microsoft Edge.
-- **[Issue 3: Browser Compatibility for `mozHasAudio()` Method](#)**
+- **[Issue 3: Browser Compatibility for `mozHasAudio()` Method](https://caniuse.com/mdn-api_htmlvideoelement_mozhasaudio)**
   - Browser compatibility for a method used, `mozHasAudio()`, that is native to Firefox only.
 
 ## Functional Requirements
