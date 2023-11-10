@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useEffect } from "react";
 
 function CanvasVideoLoader() {
@@ -17,7 +20,6 @@ function CanvasVideoLoader() {
     const ctx = canvas.getContext("2d");
 
     video.addEventListener("play", () => {
-
       function processFrame() {
         //pixel data is stored as continuous RGBAlpha Values
         //Reference docs: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas
@@ -46,9 +48,38 @@ function CanvasVideoLoader() {
 
   useEffect(() => {
     drawFrame();
+    const video = document.querySelector("video");
+
+    //play/pause button logic
+    const playButton2 = document.querySelector(".play-button-2");
+
+    playButton2.onclick = () => {
+      if (video.paused) {
+        video.play();
+        playButton2.innerHTML = "Pause";
+      } else {
+        video.pause();
+        playButton2.innerHTML = "Play";
+      }
+    };
   }, []);
 
-  return <div className="canvas-holder"></div>;
+  // useEffect(() => {
+  //   //extract video metadata such as videoduration
+  //   const video = document.querySelector("video");
+  //   const videoDuration = video.duration;
+  //   console.log(videoDuration, "videoDuration");
+  //   const metadataHolder = document.querySelector(".metadata");
+  //   metadataHolder.innerHTML = `Video Duration: ${videoDuration}`;
+  // }, [videoMount.current]);
+
+  return (
+    <div className="canvasContainer">
+      {/* <div className="metadata"></div> */}
+      <button className="play-button-2"> Play </button>
+      <div className="canvas-holder"></div>
+    </div>
+  );
 }
 
 export default CanvasVideoLoader;

@@ -15,8 +15,10 @@ function App() {
     <div>
       {videoLoad ? (
         <div className="video-player-ui">
+          <h3>Video Player</h3>
           <RenderVideo videoRef={videoRef}/>
-          <CanvasVideoLoader videoRef={videoRef} />
+          <h3>Canvas Player</h3>
+          <CanvasVideoLoader />
           <WaveSurferPlayer />
         </div>
       ) : (

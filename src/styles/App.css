@@ -9,6 +9,10 @@ h2 {
   color: whitesmoke;
   text-align: center;
 }
+h3{
+  color: whitesmoke;
+  text-align: center;
+}
 
 @media screen and (max-width: 768px) {
   h2 {
@@ -22,17 +26,32 @@ h1 {
 }
 
 .video-player {
+  /* position: relative;*/
+   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; /* Set the width to half of the screen */
+  /* margin: auto; */
+}
+
+.metadata{
+  color: whitesmoke;
+  text-align: center;
+  width: min-content;
+}
+
+.canvasContainer{
   position: relative;
-  width: 50%; /* Set the width to half of the screen */
+  width: 100%; /* Set the width to half of the screen */
   margin: auto;
 }
 
 video {
-  width: 100%;
+  width: 50%;
   display: block;
 }
 
-.play-button {
+.play-button-2 {
   position: absolute;
   top: 50%;
   left: 50%;
