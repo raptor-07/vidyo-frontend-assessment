@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 
 import { useState, useRef } from "react";
 import LoadVideo from "./components/LoadVideo";
@@ -10,11 +9,15 @@ import "./styles/App.css";
 
 function App() {
   const [videoLoad, setVideoLoad] = useState(false);
+  const videoRef = useRef({});
 
   return (
     <div>
       {videoLoad ? (
         <div className="video-player-ui">
+          <RenderVideo videoRef={videoRef}/>
+          <CanvasVideoLoader videoRef={videoRef} />
+          <WaveSurferPlayer />
         </div>
       ) : (
         <div>
@@ -22,6 +25,7 @@ function App() {
             This Player Plays a video using Canvas tag and outputs corresponding
             waveform for the Audio
           </h2>
+          <LoadVideo setVideoLoad={setVideoLoad} videoRef={videoRef} />
         </div>
       )}
     </div>
