@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Roboto+Mono:wght@700&display=swap");
+
+body {
+  background: #292727;
+  font-family: "League Spartan", sans-serif;
+  font-family: "Roboto Mono", monospace;
+}
+
+.load-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 20%;
+  padding: 1rem;
+  background: grey;
+  z-index: 1000;
+  border: 7px dotted whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px black;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+}
