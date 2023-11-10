@@ -43,10 +43,10 @@ function RenderVideo({ videoRef }) {
 
       if (!hasAudio(video)) {
         alert(
-          "USE FIREFOX FOR DETERMINISTIC BEHAVIOR!\n\n Other browsers are not compatible with the audioTracks property causing it to be undefined at runtime !"
+          "USE FIREFOX FOR DETERMINISTIC BEHAVIOR!\n\n Toggle on media.track.enabled from about:config in Firebox!\n\ncheck docs: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks for compatibility table\n\nOther browsers are not compatible with the Media.audioTracks property causing it to be undefined at runtime !\n\n"
         );
         alert(
-          `NOTE for vidyo.ai team: THIS ALERT MIGHT BE A FALSE POSITIVE! \nPLEASE CHECK THIS LOOM VIDEO FOR MORE INFO: https://www.loom.com/share/18f1af39e0ae4a4691402ca766731218?sid=5e13fa6d-5c10-4238-b011-0c22f2adbf31 \n\n video might have no audio track \n Please upload a video with audio track \n\n  check docs: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks for compatibility table`
+          `NOTE for vidyo.ai team: THIS ALERT MIGHT BE A FALSE POSITIVE! \n\nPLEASE CHECK THIS LOOM VIDEO FOR MORE INFO: https://www.loom.com/share/18f1af39e0ae4a4691402ca766731218?sid=5e13fa6d-5c10-4238-b011-0c22f2adbf31 \n\n video might have no audio track \n\n Please upload a video with audio track`
         );
 
         //If there are no ambiguous false positiives, then we can simply restart react app.
