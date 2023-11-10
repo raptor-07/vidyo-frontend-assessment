@@ -76,7 +76,7 @@ function CanvasVideoLoader() {
   return (
     <div className="canvasContainer">
       {/* <div className="metadata"></div> */}
-      <button className="play-button-2"> Play </button>
+      <button className="play-button-2"> click to start playing on canvas </button>
       <div className="canvas-holder"></div>
     </div>
   );

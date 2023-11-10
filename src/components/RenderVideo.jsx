@@ -7,7 +7,10 @@ function RenderVideo({ videoRef }) {
   // console.log(document.querySelector("video"), "video in RenderVideo.jsx");
 
   useEffect(() => {
-    console.log("it is mounted");
+    // console.log("it is mounted");
+    // console.log(navigator.userAgent.indexOf("Firefox"), "navigator.userAgent");
+    // console.log(navigator.userAgent.indexOf("Chrome"), "navigator.userAgent");
+
     const video = document.querySelector("video");
     video.addEventListener("loadedmetadata", () => {
       // console.log(video.duration, "video.duration");
@@ -40,17 +43,27 @@ function RenderVideo({ videoRef }) {
 
       if (!hasAudio(video)) {
         alert(
-          `NOTE for vidyo.ai team: THIS ALERT MIGHT BE A FALSE POSITIVE! \nPLEASE CHECK THIS LOOM VIDEO FOR MORE INFO: https://www.loom.com/share/18f1af39e0ae4a4691402ca766731218?sid=5e13fa6d-5c10-4238-b011-0c22f2adbf31 \n\n video has no audio track \n Please upload a video with audio track \n\n  check docs: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks for compatibility table`
+          "USE FIREFOX FOR DETERMINISTIC BEHAVIOR!\n\n Other browsers are not compatible with the audioTracks property causing it to be undefined at runtime !"
         );
-        //If there are no ambiguous false positiives, then we can simply do this to restart react app:
-        
-        window.location.reload();
+        alert(
+          `NOTE for vidyo.ai team: THIS ALERT MIGHT BE A FALSE POSITIVE! \nPLEASE CHECK THIS LOOM VIDEO FOR MORE INFO: https://www.loom.com/share/18f1af39e0ae4a4691402ca766731218?sid=5e13fa6d-5c10-4238-b011-0c22f2adbf31 \n\n video might have no audio track \n Please upload a video with audio track \n\n  check docs: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks for compatibility table`
+        );
+
+        //If there are no ambiguous false positiives, then we can simply restart react app.
+
+        //if the browser is firefox, it will reload the page
+        if (navigator.userAgent.indexOf("Firefox") !== -1) {
+          window.location.reload();
+        }
+
+        //other browsers will be allowed to pass the audio check as they are not compatible with the audioTracks property.
       }
     });
 
-    return () => {
-      console.log("it is unmounted");
-    };
+    return;
+    // return () => {
+    //   console.log("it is unmounted");
+    // };
   }, []);
 
   return (

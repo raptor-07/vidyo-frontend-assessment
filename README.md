@@ -2,6 +2,8 @@
 
 This project implements a video player using ReactJS with HTML5 Canvas, incorporating Wavesurfer.js for audio waveform rendering.
 
+## NOTE: Please use Firefox for the best experience.
+
 ## Demo
 
 - **[Loom Video: Explaining Bottlenecks](https://www.loom.com/share/18f1af39e0ae4a4691402ca766731218?sid=b55e50d1-09c9-45c5-a46c-e072f1dec661)**
@@ -14,11 +16,11 @@ Visit the deployed application: [Video Player - Vercel](https://vidyo-frontend-a
 
 ## Known Issues
 
-- **[Issue 1: Browser Compatibility for `MediaElement.audioTracks` Property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks)**
+- **[Issue 1: Browser Compatibility for `MediaElement.audioTracks` Property - Please use Firefox](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks)**
   - Browser compatibility for the `audioTracks` property, which implements judgment of the presence of an audio track in the video.
 - **[Issue 2: blobURLs Usage and Streaming Differences](#)**
   - BlobURLs are used to reference the memory in the stack that stores the pixel data. Some browsers may stream this faster. The entire build is running fastest on Microsoft Edge.
-- **[Issue 3: Browser Compatibility for `mozHasAudio()` Method](https://caniuse.com/mdn-api_htmlvideoelement_mozhasaudio)**
+- **[Issue 3: Browser Compatibility for `mozHasAudio()` Method - Please use Firefox](https://caniuse.com/mdn-api_htmlvideoelement_mozhasaudio)**
   - Browser compatibility for a method used, `mozHasAudio()`, that is native to Firefox only.
 
 ## Functional Requirements
